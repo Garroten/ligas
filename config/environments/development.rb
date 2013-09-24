@@ -35,7 +35,7 @@ Ligas::Application.configure do
     port:                 587,
     domain:               'example.com',
     user_name:            'rgarrotehe@gmail.com',
-    password:             'presencia7',
+    password:             '',
     authentication:       'plain',
     enable_starttls_auto: true  }
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
