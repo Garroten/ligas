@@ -1,0 +1,29 @@
+<h1>Users#show</h1>
+<%= image_tag @user.avatar.url(:medium) %>
+<p><%= @user.username %></p>
+<p><%= @user.name %></p>
+<p><%= @user.surname %></p>
+<p><%= @user.email %></p>
+<p>
+  <%if @user.gener == 1%>
+  Hombre 
+  <%  elsif @user.gener == 2 %>
+  Mujer
+  <% end  %>
+</p>
+<p><%  if @user.birth_date %><%= distance_of_time_in_words(DateTime.now, @user.birth_date) %> <%end%></p>
+<p><%= @user.city %></p>
+<p><%= @user.country %></p>
+<p>
+  <%= link_to edit_user_path(@user) do %>
+    Modificar |
+  <%end%>
+    <%= link_to('Edit registration', edit_user_registration_path) %>
+</p>
+<p><h2>Torneos</h2></p>
+<% @user.tournaments.each do |tournament| %>
+  <%= tournament.name%> <%= link_to 'Show', tournament %> | <%= link_to 'Edit', edit_tournament_path(tournament) %> <br/>
+<% end %>
+<p>
+  <%= link_to 'New Tournament', new_tournament_path %>
+</p>

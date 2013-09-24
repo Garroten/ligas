@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  is_send: false
+  is_signup: false
+  tournament_id: 1
+
+two:
+  email: MyString
+  is_send: false
+  is_signup: false
+  tournament_id: 1

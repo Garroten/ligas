@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  ispairs: false
+  players_number: 1
+  signup_limit_date: 2013-09-21
+  start_date: 2013-09-21
+  end_date: 2013-09-21
+
+two:
+  name: MyString
+  ispairs: false
+  players_number: 1
+  signup_limit_date: 2013-09-21
+  start_date: 2013-09-21
+  end_date: 2013-09-21

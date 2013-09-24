@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>¡Hola <%=@candidate.name%>!</h1>
+    <p>
+      <%=@user.firstname%> te ha invitado a participar en la <%=@tournament.name%> de 
+      <%=@tournament.sport.name%> para ver si junto a tu compañero sois capaces
+      de vencer a los otros <%=@tournament.players_number%> jugadores.
+    </p>
+    <p>
+      ¿Aceptas el reto? 
+        <br/>
+        <%= url_for :controller => 'candidates', :action => 'enrole', :only_path => false, :id => @candidate.id %> 
+        <br/>
+        <%= url_for :controller => 'candidates', :action => 'cancel', :only_path => false, :id => @candidate.id %>
+      
+    </p>    
+  </body>
+</html>

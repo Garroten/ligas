@@ -1,0 +1,55 @@
+<%= form_for @user, :url => {:action => 'update'}, :html => { :multipart => true, :class => 'form-horizontal' } do |form| %>
+  <% if @user.errors.any? %>
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <p>
+    <%= label_tag 'Nombre' %>  <br />
+    <%= form.text_field :name, :class => '', :id => '' %>
+  </p>  
+  
+  <p>
+    <%= label_tag 'Apellidos' %>  <br />
+    <%= form.text_field :surname, :class => '', :id => '' %>
+  </p>
+  
+  <p>
+    <%= label_tag 'email' %> <br />
+    <%= form.email_field :email, :class => '', :id => '' %>
+  </p>
+  
+  <p>
+    <%= label_tag 'Sexo' %><br />
+    <%= form.radio_button :gener, 1 %>
+    Hombre
+    <%= form.radio_button :gener, 2 %>
+    Mujer    
+  </p>
+  
+  <p>
+    <%= label_tag 'Fecha de nacimiento' %><br />
+    <%= form.date_select :birth_date, {:start_year => 1930}, {:class => ''} %>
+  </p>
+  
+  <p>
+    <%= label_tag 'Ciudad de residencia' %><br />
+    <%= form.text_field :city %>
+  </p>
+  
+  <p>
+    <%= label_tag 'País:' %><br />
+    <%= form.collection_select :country, User::COUNTRIES, :to_s, :titleize, {:include_blank => true} %>
+  </p>
+  <p>
+    <%= form.file_field :avatar %>
+  </p>
+  <p>
+    <%= submit_tag 'update'%>	
+  </p>
+<% end %>
+
+<%= link_to 'Show', @user %> | <%= link_to 'Back', @user %>

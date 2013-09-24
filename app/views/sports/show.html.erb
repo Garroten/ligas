@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sport.name %>
+</p>
+
+<p>
+  <strong>Ispairs:</strong>
+  <%= @sport.ispairs %>
+</p>
+
+<p>
+  <strong>Playernumber:</strong>
+  <%= @sport.playernumber %>
+</p>
+
+<%= link_to 'Edit', edit_sport_path(@sport) %> |
+<%= link_to 'Back', sports_path %>
